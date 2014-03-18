@@ -125,6 +125,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('assemble');
+  grunt.loadNpmTasks('grunt-github-pages');
 
   // Build HTML, compile LESS and watch for changes. You must first run "bower install"
   // or install Bootstrap to the "vendor" directory before running this command.
