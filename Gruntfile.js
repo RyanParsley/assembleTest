@@ -62,7 +62,16 @@ module.exports = function(grunt) {
         files: {'<%= site.dest %>/': ['<%= site.templates %>/*.hbs']}
       }
     },
-
+    githubPages: {
+      target: {
+        options: {
+          // The default commit message for the gh-pages branch
+          commitMessage: 'push'
+        },
+        // The folder where your gh-pages repo is
+        src: '_gh_pages'
+      }
+    },
 
     // Compile SASS to CSS
     sass: {                              // Task
@@ -124,4 +133,6 @@ module.exports = function(grunt) {
   grunt.registerTask('docs', ['readme', 'sync']);
 
   grunt.registerTask('default', ['clean', 'jshint', 'assemble', 'compass', 'docs']);
+
+  grunt.registerTask('deploy', ['githubPages:target']);
 };
