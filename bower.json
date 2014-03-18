@@ -1,0 +1,8 @@
+{
+  "name": "assembleTest",
+  "main": [
+    "Gruntfile.js"
+  ],
+  "dependencies": {},
+  "version": "0.1.0"
+}
