@@ -62,15 +62,11 @@ module.exports = function(grunt) {
         files: {'<%= site.dest %>/': ['<%= site.templates %>/*.hbs']}
       }
     },
-    githubPages: {
-      target: {
-        options: {
-          // The default commit message for the gh-pages branch
-          commitMessage: 'push'
-        },
-        // The folder where your gh-pages repo is
-        src: '_gh_pages'
-      }
+    'gh-pages': {
+      options: {
+        base: '_gh_pages'
+      },
+      src: ['**']
     },
 
     // Compile SASS to CSS
@@ -125,7 +121,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-github-pages');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
   // Build HTML, compile LESS and watch for changes. You must first run "bower install"
   // or install Bootstrap to the "vendor" directory before running this command.
@@ -135,5 +131,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['clean', 'jshint', 'assemble', 'compass', 'docs']);
 
-  grunt.registerTask('deploy', ['githubPages:target']);
+  grunt.registerTask('deploy', ['gh-pages']);
 };

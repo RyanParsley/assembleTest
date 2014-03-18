@@ -37,7 +37,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-sass": "*",
     "grunt-contrib-compass": "*",
-    "grunt-github-pages": "*",
+    "grunt-gh-pages": "*",
     "grunt-readme": "~0.4.5",
     "grunt-sync-pkg": "~0.1.2",
     "handlebars-helper-ghbtns": "~0.1.0",
