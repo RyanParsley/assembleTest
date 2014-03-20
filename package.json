@@ -25,7 +25,7 @@
     "chalk": "~0.4.0"
   },
   "devDependencies": {
-    "assemble": "~0.4.33",
+    "assemble": "~0.4.37",
     "assemble-contrib-anchors": "~0.1.1",
     "assemble-contrib-toc": "~0.1.0",
     "assemble-contrib-wordcount": "~0.3.0",
@@ -33,8 +33,8 @@
     "grunt": "~0.4.2",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-copy": "~0.5.0",
-    "grunt-contrib-jshint": "~0.8.0",
-    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-jshint": "^0.8.0",
+    "grunt-contrib-watch": "^0.5.3",
     "grunt-contrib-sass": "*",
     "grunt-contrib-compass": "*",
     "grunt-gh-pages": "*",
@@ -48,7 +48,8 @@
     "handlebars-helper-br": "~0.1.0",
     "lodash": "~2.4.1",
     "pretty": "~0.1.2",
-    "connect-livereload": "~0.3.2"
+    "connect-livereload": "~0.3.2",
+    "handlebars-helper-md": "*"
   },
   "keywords": [
     "assemble boilerplate",
@@ -73,6 +74,7 @@
     "static site generator",
     "templates",
     "yeoman generator",
-    "yeoman static site generator"
+    "yeoman static site generator",
+    "handlebars-helper-md"
   ]
 }

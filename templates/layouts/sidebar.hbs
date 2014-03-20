@@ -1,10 +1,7 @@
----
-layout: default.hbs
----
-<div class="row">
-  <div class="col-md-3">
-    <div class="bs-sidebar hidden-print" role="complementary">
-      <ul class="nav bs-sidenav">
+<aside>
+  <div>
+    <div role="complementary">
+      <ul class="nav">
         {{#is basename "about" }}
           {{> nav-about }}
         {{/is}}
@@ -14,10 +11,10 @@ layout: default.hbs
       </ul>
     </div>
   </div>
-  <div class="col-md-9" role="main">
+  <div role="main">
     {{! wrapped with 'wordcount' for wordcount plugin }}
     <div class="wordcount">
       {{> body }}
     </div>
   </div>
-</div>
+</aside>
