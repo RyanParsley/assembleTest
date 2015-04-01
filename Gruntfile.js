@@ -66,7 +66,9 @@ module.exports = function(grunt) {
       options: {
         base: '_gh_pages'
       },
-      src: ['**/*']
+      target: {
+        src: ['**']
+      }
     },
 
     // Compile SASS to CSS
@@ -131,5 +133,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['clean', 'jshint', 'assemble', 'compass', 'docs']);
 
-  grunt.registerTask('deploy', ['gh-pages']);
+  grunt.registerTask('deploy', ['gh-pages:target']);
 };
