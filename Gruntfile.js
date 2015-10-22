@@ -1,18 +1,20 @@
 /*
  * assembleTest
- * 
+ *
  * Ryan Parsley
- * https://github.com/ryan.parsley/assembleTest
- * 
- * Copyright (c) 2014
+ * https://github.com/ryanparsley/assembleTest
+ *
+ * Copyright (c) 2015
  * Licensed under the MIT license.
  */
 
 module.exports = function(grunt) {
-'use strict';
+  'use strict';
 
+  grunt.loadNpmTasks('assemble');
 
-  // Project configuration.
+  require('load-grunt-tasks')(grunt);
+
   grunt.initConfig({
 
     // Project metadata
@@ -20,14 +22,10 @@ module.exports = function(grunt) {
     vendor: grunt.file.readJSON('.bowerrc').directory,
     site  : grunt.file.readYAML('_config.yml'),
 
-
-    // Before generating any new files, remove files from previous build.
     clean: {
       example: ['<%= site.dest %>/*.html'],
     },
 
-
-    // Lint JavaScript
     jshint: {
       all: ['Gruntfile.js', 'templates/helpers/*.js'],
       options: {
@@ -35,7 +33,6 @@ module.exports = function(grunt) {
       }
     },
 
-    // Build HTML from templates and data
     assemble: {
       options: {
         flatten: true,
@@ -69,21 +66,19 @@ module.exports = function(grunt) {
         src: ['**']
       }
     },
-
-    // Compile SASS to CSS
-    sass: {                              // Task
-      dist: {                            // Target
-        options: {                       // Target options
+    sass: {
+      dist: {
+        options: {
           style: 'expanded'
         },
-        files: {                         // Dictionary of files
-          '<%= site.assets %>/style/style.css': 'style/style.scss'       // 'destination': 'source'
+        files: {
+          '<%= site.assets %>/style/style.css': 'style/style.scss'
         }
       }
     },
-    compass: {                  // Task
-      dist: {                   // Target
-        options: {              // Target options
+    compass: {
+      dist: {
+        options: {
           sassDir: 'style',
           cssDir: '<%= site.assets %>/style',
           environment: 'production'
@@ -104,28 +99,12 @@ module.exports = function(grunt) {
         }
       },
       livereload: {
-        // Here we watch the files the sass task will compile to
-        // These files are sent to the live reload server after sass compiles to them
         options: { livereload: true },
         files: ['<%= site.dest %>/*.html', 'style/{,*/}*.{scss,sass}'],
       },
     }
   });
 
-  // Load npm plugins to provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-readme');
-  grunt.loadNpmTasks('grunt-sync-pkg');
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('assemble');
-  grunt.loadNpmTasks('grunt-gh-pages');
-
-  // Build HTML, compile LESS and watch for changes. You must first run "bower install"
-  // or install Bootstrap to the "vendor" directory before running this command.
   grunt.registerTask('design', ['clean', 'assemble', 'compass', 'watch:site']);
 
   grunt.registerTask('docs', ['readme', 'sync']);
