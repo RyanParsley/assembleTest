@@ -11,7 +11,9 @@ data:             data/*.{json,yml}
 
 # Templates
 templates:        templates
-includes:         <%= site.templates %>/includes/*.hbs
+includes:
+  - <%= site.templates %>/includes/**/*.{hbs,md}
+  - content/**/*.md
 layouts:          <%= site.templates %>/layouts
 layout:           default.hbs
 

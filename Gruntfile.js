@@ -24,7 +24,6 @@ module.exports = function(grunt) {
     // Before generating any new files, remove files from previous build.
     clean: {
       example: ['<%= site.dest %>/*.html'],
-      // Delete this target after first run!!!
     },
 
 
