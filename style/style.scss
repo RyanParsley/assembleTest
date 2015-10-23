@@ -1,19 +1,19 @@
 $container: unquote(".container, nav.secondary ul");
 
-@import "compass/utilities/general/clearfix";
-@import "compass/reset";
-
+// Global
+//
+// Reset
+//
+// Style guide: 1
 @import "base/reset";
 @import "base/framework_liquid";
 
-@import "compass/css3/text-shadow";
-@import "compass/css3/border-radius";
-@import "compass/css3/box-shadow";
-@import "compass/css3/images";
-@import "compass/typography/vertical_rhythm";
-@import "compass/layout/grid-background";
 
-
+// Modules
+//
+// Module specific styles
+//
+// Style guide: 2
 @import "modules/all";
 
 @import "theme/theme";

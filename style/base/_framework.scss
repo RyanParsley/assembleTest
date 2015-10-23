@@ -8,7 +8,7 @@ $column-padding: 10px !default;
   padding: $column-padding * 2;
 }
 
-@mixin prepend-column($columns, $first: false){ 
+@mixin prepend-column($columns, $first: false){
   @if $first == true{
     margin-left: ($columns * $column-width) + ($gutter-width * ($columns)) - $column-padding;
   } @else {

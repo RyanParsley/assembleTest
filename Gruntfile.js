@@ -85,7 +85,6 @@ module.exports = function(grunt) {
         }
       },
     },
-
     watch: {
       all: {
         files: ['<%= jshint.all %>'],
@@ -102,12 +101,24 @@ module.exports = function(grunt) {
         options: { livereload: true },
         files: ['<%= site.dest %>/*.html', 'style/{,*/}*.{scss,sass}'],
       },
+    },
+    kss: {
+      options: {
+        css: '../assets/style/style.css',
+      },
+      dist: {
+        files: {
+          '_gh_pages/styleguide': 'style',
+        }
+      }
     }
   });
 
   grunt.registerTask('design', ['clean', 'assemble', 'compass', 'watch:site']);
 
   grunt.registerTask('docs', ['readme', 'sync']);
+
+  grunt.registerTask('styleguide', ['kss']);
 
   grunt.registerTask('default', ['clean', 'jshint', 'assemble', 'compass', 'docs']);
 

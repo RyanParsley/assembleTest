@@ -1,6 +1,6 @@
 #{$container} {
   margin: 0 auto;
-  padding: 0px $line-height; 
+  padding: 0px $line-height;
 }
 
 $font-family: verdana, sans-serif !default;
@@ -13,7 +13,7 @@ input, textarea {
   font-size: 21px;
   font-family: arial;
   border: 1px solid #333333;
-  display: block; 
+  display: block;
 }
 
 textarea {
@@ -78,6 +78,16 @@ body>footer {
   background: $primaryBGColor;
 }
 
+/*
+Navigation element
+
+Markup:
+<nav><ul><li><a href="#">link</a></li></ul></nav>
+
+Styleguide 1.1
+
+*/
+
 nav {
   background: $footerBGColor;
   ul {
@@ -92,20 +102,30 @@ nav {
     padding: 6px;
     &.active, &:hover {
       background: $buttonBGColorActive;
-      color: $buttonColorActive; 
+      color: $buttonColorActive;
     }
   }
 }
+/*
+Call to action
 
+Markup:
+<a class="CTA">Call to action</a>
+
+:hover     - Highlight the button when hovered.
+
+Styleguide 1.2
+
+*/
 .CTA {
-  background: $primaryBGColor; 
+  background: $primaryBGColor;
   &:hover{
     background:rgba($primaryBGColor, .5);
   }
 }
 
 aside {
-  background: $primaryBGColor; 
+  background: $primaryBGColor;
 }
 .features{
     margin:0;
